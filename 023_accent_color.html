@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accent Color</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type="radio"]{
+            accent-color: magenta;
+        }
+    </style>
+</head>
+<body>
+    <form action="/foo.bar">
+        <p>Select your favorite outdor adventure type</p>
+        <input type="radio" name="type" id="mountain" value="mountain">
+        <label for="mountain">Mountain</label><br>
+        <input type="radio" name="type" id="ocean" value="ocean">
+        <label for="ocean">Ocean</label><br>
+        <input type="radio" name="type" id="desert" value="desert">
+        <label for="desert">Desert</label>
+    </form>
+</body>
+</html>

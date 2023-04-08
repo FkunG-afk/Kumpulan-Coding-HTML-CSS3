@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee</title>
+    <style>
+        * {
+            box-sizing:border-box;
+        }
+        body {
+            --space: 3rem;
+            min-height: 100vh;
+            display: grid;
+            align-content: center;
+            overflow: hidden;
+            gap: var(--space);
+            width: 100%;
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+        .marquee {
+            --duration: 4s;
+            --gap: var(--space);
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: var(--gap);
+        }
+        .marquee__group {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: var(--gap);
+            min-width: 100%;
+            animation: scroll var(--duration) linear infinite;
+        }
+        @media (prefers-reduced-motion:rduce) {
+            .marquee__group {
+                animation-play-state: paused;
+            }
+        }
+        .marquee__group h4{
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 1px solid #ccc;
+            padding: 3rem;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-100% - var(--gap)));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <div class="marquee__group">
+            <h4>Business A</h4>
+            <h4>Business B</h4>
+            <h4>Business C</h4>
+            <h4>Business D</h4>
+            <h4>Business E</h4>
+            <h4>Business F</h4>
+            <h4>Business G</h4>
+        </div>
+        <div aria-hidden="true" class="marquee__group">
+            <h4>Business A</h4>
+            <h4>Business B</h4>
+            <h4>Business C</h4>
+            <h4>Business D</h4>
+            <h4>Business E</h4>
+            <h4>Business F</h4>
+            <h4>Business G</h4>
+        </div>
+    </div>
+</body>
+</html>

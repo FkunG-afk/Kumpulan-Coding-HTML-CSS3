@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menampilkan Form Input Saat Di Centang Checkbox</title>
+</head>
+<body>
+    <p>Menampilkan Form Input Saat Di Centang Checkbox</p>
+    <label for="myCheck">Checkbox :</label>
+    <input type="checkbox" id="myCheck" onclick="myFunction()">
+    <p id="text" style="display: none">
+        <label>Other :</label>
+        <input type="text" name="text">
+    </p>
+    <script>
+        function myFunction() {
+            var checkBox = document.getElementById("myCheck");
+            var text = document.getElementById("text");
+            if(checkBox.checked == true){
+                text.style.display = "block";
+            }else{
+                text.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
